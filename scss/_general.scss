@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: $color-brand-gold;
+    color: $color-brand-white;
+}
+
+body {
+    color: $color-brand-black;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+p {
+    margin-top: 0;
+    @include set-type($type-sans-reg, 1rem, 1.5, 400, normal);
+    @media screen and (min-width: 60em) {
+        font-size: 1.125rem;
+        line-height: 1.333333333333333;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+dd {
+    margin-inline-start: 0;
+}
+
+a {
+    text-underline-offset: .125rem;
+    color: $color-brand-black;
+}
+
+button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: 0;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,42 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0 1.5rem;
+    background-color: $color-brand-blue;
+    display: flex;
+    pointer-events: none;
+    z-index: 1;
+    &.loaded {
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+    svg {
+        width: 5rem;
+        animation-name: rotateLogo;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        margin: auto;
+        .logo-bg {
+            fill: $color-brand-gold !important;
+        }
+        .logo-fg {
+            fill: $color-brand-white !important;
+        }
+    }
+    @keyframes rotateLogo {
+        0% { transform: rotate(0deg); }
+        85% { transform: rotate(180deg); }
+        100% { transform: rotate(0); }
+    }
+}
+
+/* Toggled via JS when overlay menu is opened/closed */
+
+body.modal-open {
+    position: fixed;
+    overflow: hidden;
+}

@@ -1,0 +1,84 @@
+.primary-heading {
+    @include set-type($type-serif-black, 1.75rem, 1.285714285714286, 400, normal);
+    @media screen and (min-width: 60em) {
+        font-size: 2.75rem; // another prev (3) new val (7/14) orig 2.25rem
+        line-height: 1.272727272727273; // 44 / 56
+    }
+}
+
+.primary-heading-tagline {
+    @include set-type($type-sans-reg, 1.25rem, 1.4, 400, normal);
+    @media screen and (min-width: 60em) {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+}
+
+.section-heading {
+    display: inline-block;
+    @include set-type($type-sans-display, 1rem, 1.5, 700, normal);
+    text-transform: uppercase;
+    padding: .75rem 0 .5rem;
+    border-top-style: solid;
+    border-top-width: .25rem;
+    border-top-color: $color-brand-black;
+    @media screen and (min-width: 60em) {
+        font-size: 1.125rem;
+        line-height: 1;
+    }
+}
+
+.section-subheading {
+    margin-bottom: 0;
+    @include set-type($type-sans-display, 2rem, 1.25, 900, normal);
+    @media screen and (min-width: 60em) {
+        font-size: 2.25rem;
+        line-height: 1.111111111111111;
+    }
+}
+
+.secondary-heading {
+    margin-bottom: .25rem;
+    @include set-type($type-sans-display, 1rem, 1.25, 700, normal);
+    @media screen and (min-width: 60em) {
+        font-size: 1.125rem;
+        line-height: 1.333333333333333;
+    }
+}
+
+.meta-heading {
+    @include set-type($type-sans-display, .75rem, 1, 700, normal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: .25rem;
+    @media screen and (min-width: 60em) {
+        font-size: .875rem;
+    }
+}
+
+.meta-text {
+    @include set-type($type-sans-micro, .75rem, 1.333333333333333, 400, normal);
+    margin-bottom: 0;
+    @media screen and (min-width: 60em) {
+        font-size: .875rem;
+        line-height: 1.428571428571429;
+    }
+    em {
+        font-style: italic;
+    }
+}
+
+.tag {
+    @extend .meta-text;
+    padding: .375rem 1rem .5rem;
+    border: 1px solid $color-brand-black;
+    border-radius: 1rem;
+    text-align: center;
+    display: inline-block;
+}
+
+figcaption {
+    p {
+        @extend .meta-text;
+    }
+}

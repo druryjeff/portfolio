@@ -1,0 +1,474 @@
+.wrap {
+    width: calc(100% - 3rem);
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    @media screen and (min-width: 60rem) {
+        margin-left: 5rem;
+        margin-right: 5rem;
+        width: calc(100% - 10rem);
+    }
+    @media screen and (min-width: 80rem){
+        width: 100%;
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.inner-wrap {
+    display: grid;
+    grid-gap: 1.5rem;
+    padding: 3rem 0;
+    @media screen and (min-width: 60em){
+        padding: 5rem 0;
+        grid-template-columns: repeat(12,1fr);
+    }
+}
+
+.hero {
+    .image-block {
+        padding-top: .5rem;
+        @media screen and (min-width: 60em){
+            padding-top: 1.5rem;
+        }
+    }
+}
+
+.overview {
+    background-color: $color-brand-white;
+    padding: 3rem 0;
+    @media screen and (min-width: 60em){
+        padding: 7.5rem 0;
+    }
+    .wrap {
+        display: grid;
+        grid-gap: 1.5rem;
+        @media screen and (min-width: 60em) {
+            grid-template-columns: repeat(12,1fr);
+        }
+    }
+}
+
+.overview-header {
+    @media screen and (min-width: 60em) {
+        grid-column: 2 / span 7; // new value 7/14 (original was span 10)
+    }
+    .primary-heading {
+        margin-bottom: .5rem;
+        max-width: 40rem;
+        @supports (text-wrap: balance){
+            text-wrap: balance;
+            max-width: none;
+        }
+    }
+    .primary-heading-tagline {
+        margin-bottom: 2rem;
+    }
+}
+
+.overview-content {
+    display: grid;
+    @media screen and (min-width: 60em) {
+        // position on main grid
+        grid-column: 2 / span 10;
+        // nested grid
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 1.5rem;
+    }
+}
+
+.overview-col {
+    @media screen and (min-width: 60em) {
+        padding-right: 2.5rem;
+    }
+}
+
+.overview-meta-content {
+    border-top: 1px solid $color-brand-grey-200;
+    padding-top: 1.5rem;
+    @media screen and (min-width: 60em) {
+        // position on main grid
+        grid-column: 2 / span 10;
+    }
+    dl {
+        display: grid;
+        grid-gap: 1.5rem;
+        @media screen and (min-width: 60em) {
+            // nested grid
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .tags {
+        margin-top: .5rem;
+    }
+}
+
+.overview-meta {
+    @media screen and (min-width: 60em) {
+        padding-right: 5rem;
+    }
+    dt {
+        @extend .meta-heading;
+    }
+    dd {
+        @extend .meta-text;
+        margin-bottom: .375rem;
+        &:last-child {
+            margin: 0;
+        }
+        .tag {
+            margin-top: .25rem;
+        }
+    }
+}
+
+.tags {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            @extend .tag;
+            margin-right: .5rem; // in place of gap for browser compat
+            margin-top: .5rem; // in place of gap for browser compat
+        }
+    }
+}
+
+.text-block {
+    display: grid;
+    grid-gap: 1.5rem;
+    @media screen and (min-width: 60em) {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+.h-group {
+    margin-bottom: .75rem;
+    @media screen and (min-width: 60em) {
+        grid-column: 3 / span 8;
+    }
+}
+
+.list-block {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2.5rem;
+    @media screen and (min-width: 60em) {
+        grid-template-columns: repeat(5,1fr);
+        grid-gap: 1.5rem;
+    }
+    @media screen and (min-width: 60em) {
+        grid-column: 2 / span 10;
+    }
+    .list {
+        flex: 1 1 0;
+        padding-left: 1rem;
+        border-left: .125rem solid $color-brand-white;
+        height: 100%;
+        h3 {
+            @extend .meta-heading;
+        }
+        li {
+            @extend .meta-text;
+            margin-top: .25rem;
+            padding-top: .25rem;
+            border-top: 1px solid rgba(255,255,255,.2);
+            &:first-child {
+                border-top: 0;
+            }
+        }
+    }
+}
+
+.image-block {
+    figure + figure {
+        margin-top: 3.5rem;
+    }
+    figcaption {
+        margin-top: 1.5rem;
+        display: grid;
+        grid-gap: 1.5rem;
+        @media screen and (min-width: 60em) {
+            grid-template-columns: repeat(12,1fr);
+        }
+        p {
+            color: rgba(255,255,255,.6) !important;
+            margin-bottom: 0;
+            @media screen and (min-width: 60em) {
+                grid-column: 3 / span 8;
+            }
+        }
+    }
+}
+
+.offset-overlap-block {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    div:first-child {
+        grid-column: 1 / span 9;
+        grid-row: 1;
+    }
+    div:last-child {
+        grid-column: 7 / span 6;
+        grid-row: 1;
+        z-index: 1;
+        img {
+            @include set-shadow();
+        }
+    }
+    &.flip {
+        div:first-child {
+            grid-column: 7 / span 6;
+        }
+        div:last-child {
+            grid-column: 1 / span 9;
+        } 
+    }
+}
+
+.overlap-block {
+    margin-top: 0;
+    display: grid;
+    grid-template-rows: repeat(3,auto);
+    align-items: center;
+    grid-gap: 1.5rem;
+    @media screen and (min-width: 40em){
+        margin-top: 2.5rem;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 1fr;
+        grid-gap: 0;
+    }
+    div:nth-child(1) {
+        grid-row: 2;
+        @media screen and (min-width: 40em){
+            height: 80vh;
+            grid-column: 1 / span 4;
+            grid-row: 1;
+        }
+        img {
+            @media screen and (min-width: 40em){
+                height: 100%;
+                object-position: 50% 38%;
+                object-fit: cover;
+            }
+        }
+    }
+    div:nth-child(2) {
+        grid-row: 1;
+        @media screen and (min-width: 40em){
+            height: 90vh;
+            grid-column: 4 / span 6;
+            grid-row: 1;
+            z-index: 1;
+        }
+        img {
+            @media screen and (min-width: 40em){
+                height: 100%;
+                object-position: 50% 3%;
+                object-fit: cover;
+                @include set-shadow();
+            }
+        }
+    }
+    div:nth-child(3) {
+        grid-row: 3;
+        @media screen and (min-width: 40em){
+            height: 80vh;
+            grid-column: 9 / span 4;
+            grid-row: 1;
+        }
+        img {
+            @media screen and (min-width: 40em){
+                object-position: 50% 83.5%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.split-block {
+    // borrow styles from .wrap
+    width: calc(100% - 3rem);
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    display: grid;
+    grid-gap: 1.5rem;
+    @media screen and (min-width: 60em) {
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .text-block {
+        @media screen and (min-width: 60em) {
+            // create half a page layout including half .wrap and half 12 col grid
+            width: calc(50% - 5rem);
+            grid-template-columns: repeat(6, 1fr);
+            margin-right: 5rem;
+            max-width: 40rem;
+        }
+    }
+    .h-group {
+        @media screen and (min-width: 60em) {
+            grid-column: 2 / span 4;
+        }
+    }
+    .secondary-heading {
+        margin-top: 0 !important;
+    }
+    .bleed-left {
+        @media screen and (min-width: 60em){
+            height: 60vh;
+            overflow: hidden;
+            position: relative;
+        }
+        video {
+            width: 100%;
+            @media screen and (min-width: 60em) {
+                height: 100%;
+                width: auto;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+    .image-block+.text-block {
+        margin-top: 0;
+    }
+}
+
+.mobile-view-block {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1.5rem;
+    @media screen and (min-width: 60em){
+        margin-left: 0;
+        margin-right: 0;
+        grid-template-columns: repeat(4,1fr);
+    }
+    .image-block {
+        figcaption {
+            display: block;
+            p {
+                @media screen and (min-width: 60em) {
+                    grid-column: 1 / -1;
+                    padding: 0 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+.two-up-block {
+    display: grid;
+    grid-gap: 1.5rem;
+    @media screen and (min-width: 60em) {
+        // position on main grid
+        grid-column: 2 / span 10;
+        // nested grid
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .h-group {
+        @media screen and (min-width: 60em) {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+.design-details {
+    padding: 3rem 0;
+    @media screen and (min-width: 60em) {
+        padding: 7.5rem 0;
+    }
+}
+
+.next-up-nav {
+    background-color: $color-brand-white;
+    padding: 3rem 0 5rem;
+    @media screen and (min-width: 60em) {
+        padding: 7.5rem 0;
+    }
+    .wrap {
+        display: grid;
+        grid-gap: 1.5rem;
+        @media screen and (min-width: 60em) {
+            grid-template-columns: repeat(12, 1fr);
+        }
+    }
+    .next-up-nav-block {
+        text-align: center;
+        @media screen and (min-width: 60em) {
+            grid-column: 5 / span 4;
+        }
+        .secondary-heading {
+            color: $color-brand-black;
+            & + p {
+                @extend .primary-heading-tagline;
+            }
+        }
+    }
+}
+
+.interstitial {
+    padding: 0;
+    img {
+        mix-blend-mode: overlay;
+        opacity: .6;
+    }
+}
+
+.social-media {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(4,auto);
+        grid-gap: 1rem;
+        justify-content: center;
+        @media screen and (min-width: 60em){
+            justify-content: end;
+        }
+        a {
+            display: block;
+            img {
+                height: 1.5rem;
+                width: auto;
+            }
+        }
+    }
+}
+
+.card-block {
+    display: grid;
+    grid-gap: 1.25rem;
+    @media screen and (min-width: 60em) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .card {
+        padding: 1.5rem;
+        display: grid;
+        grid-gap: 1rem;
+    }
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .secondary-heading {
+            color: $color-brand-white;
+            a {
+                color: $color-brand-grey-100;
+                text-decoration: none;
+            }
+        }
+        .meta-text {
+            color: $color-brand-grey-200;
+        }
+    }
+}
