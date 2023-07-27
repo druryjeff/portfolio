@@ -1,0 +1,11 @@
+@mixin set-type($typeface, $font-size, $line-height, $font-weight, $font-style) {
+    font-family: $typeface;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    font-style: $font-style;
+}
+
+@mixin set-shadow(){
+    box-shadow: 0 0 2rem rgba(49, 49, 48, .4); //  rgb for brand black
+}

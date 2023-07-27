@@ -1,0 +1,57 @@
+.project {
+    .overview-content a,
+    .overview-meta-content a,
+    .next-up-nav a {
+        color: $color-brand-blue;
+    }
+    nav.overlay a {
+        color: $color-brand-black !important;
+    }
+    .design-details {
+        .section-heading {
+            border-top-color: $color-brand-white;
+        }
+        .section-heading,
+        .secondary-heading,
+        .section-heading,
+        .meta-heading,
+        .meta-text,
+        .secondary-heading,
+        p {
+            color: $color-brand-white;
+        }
+        a {
+            color: $color-brand-white;
+        }
+    }
+}
+
+.page-vrb {
+    background: $color-page-vrb-primary;
+    .design-details:nth-child(odd){ 
+        background-color: $color-page-vrb-secondary-dark;
+    }
+    .design-details:nth-child(even) { 
+        background-color: $color-page-vrb-secondary;
+    }
+}
+
+.page-ar {
+    background: $color-page-ar-primary;
+    .design-details:nth-child(odd) {
+        background-color: $color-page-ar-secondary-dark;
+    }
+    .design-details:nth-child(even) {
+        background-color: $color-page-ar-secondary;
+    }
+}
+
+.page-jpf {
+    background: $color-page-jpf-primary;
+    .design-details:nth-child(odd) {
+        background-color: $color-page-jpf-secondary;
+    }
+    .design-details:nth-child(even) {
+        background-color: $color-page-jpf-secondary-dark;
+    }
+}

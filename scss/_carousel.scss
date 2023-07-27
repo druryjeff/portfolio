@@ -1,0 +1,40 @@
+.carousel-block {
+  // display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-dot-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  @media screen and (min-width: 60em){
+    flex-direction: column;
+    margin-top: 0;
+    // position next to image
+    position: absolute;
+    top: calc(50% - 36px); // adjust for height of figcaption (72px / 2 = 36)
+    right: -2rem;
+    transform: translateY(-50%);
+  }
+}
+
+.carousel-dot-nav button {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .8) !important;
+  border: none;
+  margin: 0 .5rem;
+  cursor: pointer;
+  padding: 0;
+  @media screen and (min-width: 60em) {
+    width: .75rem;
+    height: .75rem;
+    margin: .5rem 0;
+  }
+}
+
+.carousel-dot-nav button.active {
+  background-color: rgba(255, 255, 255, .4) !important;
+}

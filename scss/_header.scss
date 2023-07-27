@@ -1,0 +1,81 @@
+.header {
+    @extend .wrap;
+    overflow: hidden; // for gsap animation
+    border-top: .5rem solid $color-brand-black;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        display: block;
+        svg {
+            height: 4rem;
+            @media screen and (min-width: 40em){
+                height: 5rem;
+            }
+            .logo-bg {
+                fill: $color-brand-black;
+            }
+            .logo-fg {
+                fill: $color-brand-white;
+            }
+        }
+    }
+    nav {
+        display: grid;
+        grid-template-rows: repeat(3,auto);
+        grid-gap: 1rem;
+        text-align: right;
+        @media screen and (min-width: 20em){
+            grid-template-rows: repeat(1,auto);
+            grid-template-columns: repeat(3,auto);
+        }
+        @media screen and (min-width: 40em){
+            grid-gap: 3rem;
+        }
+        a {
+            text-decoration: none;
+            color: $color-brand-black;
+            @include set-type($type-sans-display,1.125rem,1,700,normal);
+        }
+        &.overlay {
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100vh; // THIS WILL FAIL ON IOS; FIND A FIX
+            background-color: $color-brand-gold;
+            display: flex !important;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            transition: opacity 0.4s;
+            a {
+                font-size: 2.5rem;
+            }
+        }
+        &.overlay-transition {
+            opacity: 1;
+            transition: opacity 0.4s;
+        }
+    }
+    button {
+        &.menu-close {
+            color: $color-brand-white;
+            border-color: $color-brand-white;
+            position: fixed;
+            top: 2.75rem;
+            right: 1.75rem;
+            z-index: 2;
+        }
+    }
+}
+
+.page-home {
+    .header {
+        border-bottom: 1px solid $color-brand-black;
+    }
+}

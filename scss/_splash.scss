@@ -1,0 +1,34 @@
+.page-splash {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: $color-brand-blue;
+    color: $color-brand-grey-100;
+    main {
+        text-align: center;
+    }
+    p {
+        @media screen and (min-width: 30em){
+            font-size: 1.25rem;
+        }
+    }
+    svg {
+        width: 15rem;
+        height: 15rem;
+        @media screen and (min-width: 30em){
+            width: 20rem;
+            height: 20rem;
+        }
+        .logo-fg {
+            fill: $color-brand-white;
+        }
+        .logo-bg {
+            fill: $color-brand-gold;
+        }
+    }
+    .social-media ul {
+        margin-top: 1.5rem;
+        justify-content: center !important;
+    }
+}
+
