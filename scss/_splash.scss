@@ -32,15 +32,16 @@
     .social-media ul {
         margin-top: 3rem;
         justify-content: center !important;
-        img {
-            opacity: .4;
-            transition: opacity .4s;
-        }
-        a:hover {
+        a {
             img {
-                opacity: .8;
+                opacity: .4;
+                transition: opacity .4s;
             }
-
+            &:hover {
+                img {
+                    opacity: .8;
+                }
+            }
         }
     }
 }
