@@ -11,13 +11,16 @@
         @media screen and (min-width: 30em){
             font-size: 1.25rem;
         }
+        span {
+            display: block;
+        }
     }
     svg {
-        width: 15rem;
-        height: 15rem;
+        width: 7.5rem;
+        height: 7.5rem;
         @media screen and (min-width: 30em){
-            width: 20rem;
-            height: 20rem;
+            width: 10rem;
+            height: 10rem;
         }
         .logo-fg {
             fill: $color-brand-white;
