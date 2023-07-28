@@ -127,4 +127,7 @@
 
 #contact {
     padding: 3rem 0 5rem; // create room for "top" link (on inner pages this is handled by .next-up-nav)
+    @media screen and (min-width: 60em){
+        padding: 7.5rem 0;
+    }
 }
