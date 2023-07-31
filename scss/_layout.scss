@@ -454,6 +454,13 @@
         padding: 1.5rem;
         display: grid;
         grid-gap: 1rem;
+        &:hover {
+            .secondary-heading {
+                a {
+                    color: $color-brand-gold !important;
+                }
+            }
+        }
     }
     .card-content {
         display: flex;
@@ -468,6 +475,12 @@
         }
         .meta-text {
             color: $color-brand-grey-200;
+        }
+    }
+    .comingsoon {
+        .card-image,
+        .card-content {
+            opacity: .4;
         }
     }
 }
