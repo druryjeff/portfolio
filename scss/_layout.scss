@@ -116,9 +116,16 @@
         &:last-child {
             margin: 0;
         }
-        .tag {
+        a.tag {
             margin-top: .25rem;
+            text-decoration: none;
+            border-color: $color-brand-gold;
+            background-color: $color-brand-gold;
+            color: $color-brand-black;
         }
+    }
+    dd + dt {
+        margin-top: 1rem;
     }
 }
 
