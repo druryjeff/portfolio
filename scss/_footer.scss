@@ -60,5 +60,10 @@
     }
     a {
         @extend .tag;
+        margin-top: .5rem;
+        text-decoration: none;
+        border-color: $color-brand-gold;
+        background-color: $color-brand-gold;
+        color: $color-brand-white;
     }
 }
