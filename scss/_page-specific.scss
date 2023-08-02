@@ -65,3 +65,13 @@
         background-color: $color-page-studioc-secondary-dark;
     }
 }
+
+.page-stacykarzen {
+    background: $color-page-stacykarzen-primary;
+    .design-details:nth-child(odd) {
+        background-color: $color-page-stacykarzen-secondary;
+    }
+    .design-details:nth-child(even) {
+        background-color: $color-page-stacykarzen-secondary-dark;
+    }
+}
