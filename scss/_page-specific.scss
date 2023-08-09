@@ -75,3 +75,13 @@
         background-color: $color-page-stacykarzen-secondary-dark;
     }
 }
+
+.page-inhonorof {
+    background: $color-page-inhonorof-primary;
+    .design-details:nth-child(odd) {
+        background-color: $color-page-inhonorof-secondary;
+    }
+    .design-details:nth-child(even) {
+        background-color: $color-page-inhonorof-secondary-dark;
+    }
+}
