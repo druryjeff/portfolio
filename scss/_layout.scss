@@ -133,6 +133,7 @@
     ul {
         display: flex;
         flex-wrap: wrap;
+        max-width: 46.25rem;
         li {
             @extend .tag;
             margin-right: .5rem; // in place of gap for browser compat
