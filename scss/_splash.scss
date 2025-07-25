@@ -16,7 +16,9 @@
         }
     }
     .logo a {
-        transition: transform .7s;
+        img {
+            transition: transform .7s;
+        }
         &:hover svg {
             transform: scale(1.1);
         }
